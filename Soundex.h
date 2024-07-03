@@ -30,23 +30,46 @@ char getSoundexCode(char c)
 
 }
 
+void InitArray(char *arr)
+{
+    int Index = 0
+    for(;Index < 4;Index++)
+    {
+        arr[Index] = '0';
+    }
+    arr[4]='\0';
+}
+
+void StoreSoundex(int *cursIndex,const char * currentSoundx,char CurrentChar)
+{
+    char code = 0;
+    code = getSoundexCode(CurrentChar);
+    if( (code!= '0') && (code != currentSoundx[(*cursIndex -1)]) )
+    {
+        currentSoundx[(*cursIndex++)] = code;
+    }
+}
+
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
-    soundex[0] = toupper(name[0]);
     int sIndex = 1;
 
-    for (int i = 1; i < len && sIndex < 4; i++) {
+
+    InitArray(soundex);
+    soundex[0] = toupper(name[0]);
+
+    for (int i = 1; i < len && sIndex < 4; i++) 
+    {
+        StoreSoundex(&sIndex,soundex,name[i]);
+        /*
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[sIndex - 1]) {
+        if (code != '0' && code != soundex[sIndex - 1]) 
+        {
             soundex[sIndex++] = code;
         }
-    }
+        */
 
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
     }
-
-    soundex[4] = '\0';
 }
 
 #endif // SOUNDEX_H
