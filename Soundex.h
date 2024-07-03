@@ -40,7 +40,7 @@ void InitArray(char *arr)
     arr[4]='\0';
 }
 
-void StoreSoundex(int *cursIndex,const char * currentSoundx,char CurrentChar)
+void StoreSoundex(int *cursIndex,char * currentSoundx,char CurrentChar)
 {
     char code = 0;
     code = getSoundexCode(CurrentChar);
