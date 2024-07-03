@@ -32,7 +32,7 @@ char getSoundexCode(char c)
 
 void InitArray(char *arr)
 {
-    int Index = 0
+    int Index = 0;
     for(;Index < 4;Index++)
     {
         arr[Index] = '0';
