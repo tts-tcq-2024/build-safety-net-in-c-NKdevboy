@@ -5,8 +5,18 @@
 #include <ctype.h>
 #include <string.h>
 
-char getSoundexCode(char c) {
+
+// A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+// 0 1 2 3 0 1 2 0 0 2 2 4 5 5 0 1 2 6 2 3 0 1 0 2 0 2
+
+//const char LookupTable[] = "01230120022455012623010202";
+
+char getSoundexCode(char c) 
+{
+    const char LookupTable[] = "01230120022455012623010202";
     c = toupper(c);
+    return LookupTable[c-'A'];
+/*
     switch (c) {
         case 'B': case 'F': case 'P': case 'V': return '1';
         case 'C': case 'G': case 'J': case 'K': case 'Q': case 'S': case 'X': case 'Z': return '2';
@@ -16,6 +26,8 @@ char getSoundexCode(char c) {
         case 'R': return '6';
         default: return '0'; // For A, E, I, O, U, H, W, Y
     }
+*/
+
 }
 
 void generateSoundex(const char *name, char *soundex) {
