@@ -36,6 +36,10 @@ void StoreSoundex(int *cursIndex,char * currentSoundx,char CurrentChar)
     {
         currentSoundx[(*cursIndex++)] = code;
     }
+    else
+    {
+        //do nothing
+    }
 }
 
 void generateSoundex(const char *name, char *soundex) {
