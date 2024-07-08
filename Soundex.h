@@ -16,18 +16,6 @@ char getSoundexCode(char c)
     const char LookupTable[] = "01230120022455012623010202";
     c = toupper(c);
     return LookupTable[c-'A'];
-/*
-    switch (c) {
-        case 'B': case 'F': case 'P': case 'V': return '1';
-        case 'C': case 'G': case 'J': case 'K': case 'Q': case 'S': case 'X': case 'Z': return '2';
-        case 'D': case 'T': return '3';
-        case 'L': return '4';
-        case 'M': case 'N': return '5';
-        case 'R': return '6';
-        default: return '0'; // For A, E, I, O, U, H, W, Y
-    }
-*/
-
 }
 
 void InitArray(char *arr)
@@ -53,22 +41,11 @@ void StoreSoundex(int *cursIndex,char * currentSoundx,char CurrentChar)
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     int sIndex = 1;
-
-
     InitArray(soundex);
     soundex[0] = toupper(name[0]);
-
     for (int i = 1; i < len && sIndex < 4; i++) 
     {
         StoreSoundex(&sIndex,soundex,name[i]);
-        /*
-        char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[sIndex - 1]) 
-        {
-            soundex[sIndex++] = code;
-        }
-        */
-
     }
 }
 
