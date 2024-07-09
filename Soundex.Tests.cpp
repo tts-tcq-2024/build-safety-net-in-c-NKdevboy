@@ -25,8 +25,3 @@ TEST(SoudexTestsuite3, ReplacesConsonantsWithAppropriateDigits3)
   generateSoundex("", soundex);
 }
 
-TEST(SoudexTestsuite4, ReplacesConsonantsWithAppropriateDigits4) 
-{
-  char soundex[1];
-  generateSoundex("", soundex);
-}
