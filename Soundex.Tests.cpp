@@ -18,3 +18,15 @@ TEST(SoudexTestsuite2, ReplacesConsonantsWithAppropriateDigits2)
   char soundex[5];
   generateSoundex("BCDM", soundex);
 }
+
+TEST(SoudexTestsuite3, ReplacesConsonantsWithAppropriateDigits3) 
+{
+  char soundex[5];
+  generateSoundex("", soundex);
+}
+
+TEST(SoudexTestsuite4, ReplacesConsonantsWithAppropriateDigits4) 
+{
+  char soundex[1];
+  generateSoundex("", soundex);
+}
