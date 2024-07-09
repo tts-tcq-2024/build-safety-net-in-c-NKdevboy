@@ -28,13 +28,23 @@ void InitArray(char *arr)
     arr[4]='\0';
 }
 
+void storeCurrentSoundx(char code,char * currentSoundx,int *cursIndex)
+{
+    if(code != currentSoundx[(*cursIndex -1)])
+    {
+    currentSoundx[(*cursIndex++)] = code;
+    }
+}
+
 void StoreSoundex(int *cursIndex,char * currentSoundx,char CurrentChar)
 {
     char code = 0;
     code = getSoundexCode(CurrentChar);
-    if( (code!= '0') && (code != currentSoundx[(*cursIndex -1)]) )
+    //if( (code!= '0') && (code != currentSoundx[(*cursIndex -1)]) )
+    if(code!= '0')
     {
-        currentSoundx[(*cursIndex++)] = code;
+        storeCurrentSoundx(code,currentSoundx,cursIndex);
+       // currentSoundx[(*cursIndex++)] = code;
     }
     else
     {
