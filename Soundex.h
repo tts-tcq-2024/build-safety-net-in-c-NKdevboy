@@ -30,7 +30,11 @@ void InitArray(char *arr)
 
 void storeCurrentSoundx(char code,char * currentSoundx,int *cursIndex)
 {
-    if(code != currentSoundx[(*cursIndex -1)])
+    if(code == currentSoundx[(*cursIndex -1)])
+    {
+        // do nothing 
+    }
+    else
     {
     currentSoundx[(*cursIndex++)] = code;
     }
