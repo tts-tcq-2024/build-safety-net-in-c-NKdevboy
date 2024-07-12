@@ -28,6 +28,6 @@ TEST(SoudexTestsuite3, ReplacesConsonantsWithAppropriateDigits3)
 TEST(SoudexTestsuite4, ReplacesConsonantsWithAppropriateDigits4) 
 {
   char soundex[5];
-  generateSoundex("BBBB", soundex);
+  generateSoundex("BBBc", soundex);
 }
 
