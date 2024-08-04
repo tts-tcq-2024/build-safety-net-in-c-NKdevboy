@@ -18,8 +18,8 @@ TEST(SoudexTestsuite1, ReplacesConsonantsWithAppropriateDigits1)
 TEST(SoudexTestsuite2, ReplacesConsonantsWithAppropriateDigits2) 
 {
   char soundex[5];
-  generateSoundex("BCDM", soundex);
-  EXPECT_STREQ(soundex,"B235");
+  generateSoundex("BMAi", soundex);
+  EXPECT_STREQ(soundex,"B500");
 }
 
 TEST(SoudexTestsuite3, ReplacesConsonantsWithAppropriateDigits3) 
