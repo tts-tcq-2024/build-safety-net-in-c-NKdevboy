@@ -33,6 +33,6 @@ TEST(SoudexTestsuite4, ReplacesConsonantsWithAppropriateDigits4)
 {
   char soundex[5];
   generateSoundex("BBBc", soundex);
-  EXPECT_STREQ(soundex,"B12");
+  EXPECT_STREQ(soundex,"B200");
 }
 
